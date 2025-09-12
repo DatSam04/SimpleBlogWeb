@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Game Blog</title>
+    <link rel="stylesheet" href="styles.css"></style>
+    <script defer src="/script/confirmDelete.js"></script>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <h1 class="page-title">Game Blogs</h1>
+    <div class="blog_list">
+        <% blogs.forEach((blog) => { %>
+            <div class="blog_item">
+                <div class="blog_top">
+                    <h3><%= blog.title %></h3>
+                    <div class="blog_button">
+                        <a href="/update/<%= blog.id %>">
+                            <img class="update_icon" src="/images/update_icon.png">
+                        </a>
+                        <a class="delete-link" data-id="<%= blog.id %>"><img class="delete_icon" src="/images/delete_icon.png"></a>
+                    </div>
+                </div>
+                <p class="blog_author"><em>By <%= blog.author %> - <%= blog.date%></em></p>
+                <p><%= blog.content[0] %></p>
+            </div>
+        <% }) %>
+    </div>
+    <%- include("partials/delete.ejs") %>
+</body>
+</html>
