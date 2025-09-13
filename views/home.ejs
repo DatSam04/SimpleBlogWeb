@@ -9,24 +9,27 @@
 </head>
 <body>
     <%- include("partials/header.ejs") %>
-    <h1 class="page-title">Game Blogs</h1>
-    <div class="blog_list">
-        <% blogs.forEach((blog) => { %>
-            <div class="blog_item">
-                <div class="blog_top">
-                    <h3><%= blog.title %></h3>
-                    <div class="blog_button">
-                        <a href="/update/<%= blog.id %>">
-                            <img class="update_icon" src="/images/update_icon.png">
-                        </a>
-                        <a class="delete-link" data-id="<%= blog.id %>"><img class="delete_icon" src="/images/delete_icon.png"></a>
+    <main>
+        <h1 class="page-title">Game Blogs</h1>
+        <div class="blog_list">
+            <% blogs.forEach((blog) => { %>
+                <div class="blog_item">
+                    <div class="blog_top">
+                        <h3><%= blog.title %></h3>
+                        <div class="blog_button">
+                            <a href="/update/<%= blog.id %>">
+                                <img class="update_icon" src="/images/update_icon.png">
+                            </a>
+                            <a class="delete-link" data-id="<%= blog.id %>"><img class="delete_icon" src="/images/delete_icon.png"></a>
+                        </div>
                     </div>
+                    <p class="blog_author"><em>By <%= blog.author %> - <%= blog.date%></em></p>
+                    <p><%= blog.content[0] %></p>
                 </div>
-                <p class="blog_author"><em>By <%= blog.author %> - <%= blog.date%></em></p>
-                <p><%= blog.content[0] %></p>
-            </div>
-        <% }) %>
-    </div>
-    <%- include("partials/delete.ejs") %>
+            <% }) %>
+        </div>
+        <%- include("partials/delete.ejs") %>
+    </main>
+    <%- include("partials/footer.ejs") %>
 </body>
 </html>

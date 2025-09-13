@@ -8,21 +8,24 @@
 </head>
 <body>
     <%- include("partials/header.ejs") %>
-    <h1 class="page-title">Update Blogs</h1>
-    <form class="update_form" action="/update/<%= blog.id %>" method="post">
-        <label>Title:</label>
-        <input class="update_item_area" type="text" name="title" value="<%= blog.title %>">
+    <main>
+        <h1 class="page-title">Update Blogs</h1>
+        <form class="update_form" action="/update/<%= blog.id %>" method="post">
+            <label>Title:</label>
+            <input class="update_item_area" type="text" name="title" value="<%= blog.title %>">
 
-        <label>Author:</label>
-        <input class="update_item_area" type="text" name="author" value="<%= blog.author %>">
+            <label>Author:</label>
+            <input class="update_item_area" type="text" name="author" value="<%= blog.author %>">
 
-        <label>Content:</label>
-        <textarea class="update_content_area" name="content"><%= blog.content.join("\n\n") %></textarea>
+            <label>Content:</label>
+            <textarea class="update_content_area" name="content"><%= blog.content.join("\n\n") %></textarea>
 
-        <div class="update_button">
-            <button type="button" onclick="window.location.href=`/`">Cancel</button>
-            <button type="submit">Save Changes</button>
-        </div>
-    </form>
+            <div class="update_button">
+                <button type="button" onclick="window.location.href=`/`">Cancel</button>
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+    </main>
+    <%- include("partials/footer.ejs") %>
 </body>
 </html>

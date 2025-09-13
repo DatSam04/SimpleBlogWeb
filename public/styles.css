@@ -1,7 +1,15 @@
 body{
     margin: 0;
     background-color: #a1a1a1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+main{
+    flex: 1;
+}
+
 .header{
     display: flex;
     gap: 60px;
@@ -139,4 +147,9 @@ img.delete_icon{
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+}
+
+/* Footer */
+.footer{
+    text-align: center;
 }
